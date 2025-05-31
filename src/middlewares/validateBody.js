@@ -7,11 +7,9 @@ export const validateBody = (schema) => async (req, res, next) => {
     });
     next();
   } catch (err) {
-    const errors = err.details.map((detail) => detail.message);
-    next(
-      createHttpError(400, 'Bad Request', {
-        errors: errors,
-      }),
-    );
+    const errors = createHttpError(400, 'Bad Request', {
+      errors: err.details.map((detail) => detail.message),
+    });
+    next(errors);
   }
 };
