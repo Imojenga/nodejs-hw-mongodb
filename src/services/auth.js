@@ -91,7 +91,6 @@ export const requestResetToken = async (email) => {
   );
 
   const templatePath = path.join(
-    process.cwd(),
     'src',
     'templates',
     'reset-password-email.html',
