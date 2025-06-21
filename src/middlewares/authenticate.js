@@ -29,5 +29,9 @@ export const authenticate = async (req, res, next) => {
 
   req.user = user;
 
+  console.log('Authorization header:', authorization);
+  console.log('Session found:', session);
+  console.log('User found:', user);
+
   next();
 };
