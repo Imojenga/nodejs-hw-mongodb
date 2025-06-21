@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 import cloudinary from 'cloudinary';
 import { getEnvVar } from './getEnvVar.js';
 import fs from 'node:fs/promises';
