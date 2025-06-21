@@ -1,3 +1,4 @@
+import './configEnv.js';
 import { setUpServer } from './server.js';
 import { initMongoConnection } from './db/initMongoConnection.js';
 
