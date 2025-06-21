@@ -11,8 +11,8 @@ import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { getEnvVar } from '../utils/getEnvVar.js';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary.js';
+import { getEnvVar } from '../utils/getEnvVar.js';
 
 export const getContactsController = async (req, res) => {
   const { page, perPage } = parsePaginationParams(req.query);
