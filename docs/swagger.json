@@ -245,9 +245,6 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "photo"
-                ],
                 "properties": {
                   "name": {
                     "description": "Contact's name",
