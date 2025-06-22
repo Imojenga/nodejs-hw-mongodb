@@ -1,8 +1,8 @@
 tags:
   - Contacts
-summary: Get contact by id
-operationId: getContact
-description: Get contact by id
+summary: Patch contact by id
+operationId: patchContact
+description: Patch contact by id
 security:
   - bearerAuth: []
 parameters:
@@ -12,9 +12,44 @@ parameters:
     schema:
       type: string
       example: 65ca67e7ae7f10c88b598384
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - photo
+        properties:
+          name:
+            description: Contact's name
+            type: string
+            example: John Doe
+          phoneNumber:
+            description: Contact's phone number
+            type: string
+            example: 0505050505
+          email:
+            description: Contact's email
+            type: string
+            example: john.doe@mail.com
+          isFavourite:
+            description: Whether the contact is favourite
+            type: boolean
+            example: true
+            default: false
+          contactType:
+            description: Contact type
+            type: string
+            enum: ['work', 'home', 'personal']
+            example: home
+            default: personal
+          photo:
+            description: Contact's photo
+            type: string
+            format: binary
 responses:
   '200':
-    description: Get contact by id
+    description: Patch contact by id
     content:
       application/json:
         schema:
@@ -29,7 +64,7 @@ responses:
               example: 200
             message:
               type: string
-              example: Successfully found contact with id 65ca67e7ae7f10c88b598384!
+              example: Successfully patched a contact!
             data:
               type: object
               $ref: '../../../components/schemas/contact.yaml'

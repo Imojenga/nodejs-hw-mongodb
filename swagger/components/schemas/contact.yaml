@@ -7,6 +7,7 @@ required:
   - userId
   - createdAt
   - updatedAt
+  - photo
 properties:
   _id:
     description: Contact id
@@ -15,7 +16,7 @@ properties:
   name:
     description: Contact's name
     type: string
-    example: 'John Doe'
+    example: John Doe
   phoneNumber:
     description: Contact's phone number
     type: string
